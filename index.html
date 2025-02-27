@@ -10,9 +10,13 @@
             Enter name of the team :
             <input type="text" id="team1" placeholder="Enter team name">
             <button type="button" id="team1btn" onclick="teamName()">&#10004;</button>
-        </div>
+        </div><br><br>
+        Enter player names :<br>
         <form id="PlayerEntries">
-            <label for="PlayerNames"></label>
+                <div id="1playerEntry">
+                    <input type="text" placeholder="Enter player name">
+                    <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
+                </div>
         </form>
 
 
@@ -39,11 +43,17 @@
                     document.getElementById("DisTeamName").innerHTML = text;
                 }
             }
+            function playerConfimation(){
+                let pcbtn = document.getElementById("pconfirmbtn");
+                pcbtn.remove();
+            }
+
             document.getElementById("team1").addEventListener("keypress", function (event) {
             if (event.key === "Enter") {
                 document.getElementById("team1btn").click();
             }
             });
+
         </script>
     </body>
 </html>
