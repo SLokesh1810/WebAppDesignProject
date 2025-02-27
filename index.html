@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head><title>DP</title>
+    </head>
+    <body>
+        <h1>SPORT NAME</h1>
+        <div id="GameName"><button onclick="myFun()" id="GameNameButton">Enter name of the game</button></div><br>
+        <div id="DisTeamName"></div>
+        <div id="team1form">
+            Enter name of the team :
+            <input type="text" id="team1" placeholder="Enter team name">
+            <button type="button" id="team1btn" onclick="teamName()">&#10004;</button>
+        </div>
+        <form id="PlayerEntries">
+            <label for="PlayerNames"></label>
+        </form>
+
+
+
         <script>
             function myFun(){
                 let gameName = prompt("Enter the name of this game :","");
@@ -12,15 +28,6 @@
                     document.getElementById("GameName").innerHTML = gameName;
                 }
             }
-            var inputTeam1Ent = document.getElementById("team1");
-            inputTeam1Ent.addEventListener("keypress", function(event) {
-                if (event.key === "Enter") {
-                    console.log("Enter");
-                    event.preventDefault();
-                    document.getElementById("team1btn").click();
-                }
-                
-            });
             function teamName(){
                 let text;
                 let tName = document.getElementById("team1").value;
@@ -32,19 +39,11 @@
                     document.getElementById("DisTeamName").innerHTML = text;
                 }
             }
+            document.getElementById("team1").addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                document.getElementById("team1btn").click();
+            }
+            });
         </script>
-    </head>
-    <body>
-        <h1>SPORT NAME</h1>
-        <div id="GameName"><button type="button" onclick="myFun()" id="GameNameButton">Enter name of the game</button></div><br>
-        <div id="DisTeamName"></div>
-        <form id="team1form">
-            <label>Enter name of the team :</label>
-            <input type="text" id="team1" placeholder="Enter team name">
-            <button type="button" id="team1btn" onclick="teamName()">&#10004;</button> 
-        </form>
-        <form id="PlayerEntries">
-            <label for="PlayerNames"></label>
-        </form>
     </body>
 </html>
