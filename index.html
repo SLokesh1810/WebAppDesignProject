@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head><title>DP</title>
+        <script>
+            function myFun(){
+                let gameName = prompt("Enter the name of this game :","");
+                if(gameName == "") {
+                    alert("Invalid!! Try again");
+                    myFun();
+                } else {
+                    document.getElementById("GameName").innerHTML(gameName);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>SPORT NAME</h1>
+        <div id="GameName"><button type="button" onclick="myFun()">Enter name of the game</button></div>
+    </body>
+</html>
