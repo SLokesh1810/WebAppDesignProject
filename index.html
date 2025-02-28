@@ -1,59 +1,145 @@
 <!DOCTYPE html>
-<html>
-    <head><title>DP</title>
-    </head>
-    <body>
-        <h1>SPORT NAME</h1>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DP</title>
+    <style>
+        body {
+            background: linear-gradient(#4CC9FE, #99c969);
+            height: 100vh;
+            background-repeat: no-repeat;
+        }
+
+        #sportName {
+            font-size: 60px;
+            font-weight: bold;
+            font-family: Bahnschrift SemiBold;
+            color: aliceblue;
+            margin-bottom: 10px;
+        }
+
+        #teamNameDis {
+            padding: 20px 40px;
+        }
+
+        #GameNameButton {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            border-width: 0px;
+            background-color: aliceblue;
+            font-size: 16px;
+            font-weight: 600;
+            color: Bahnschrift SemiBold;
+            cursor: pointer;
+            transition: all 250ms;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        #GameNameButton::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background-color: #212121;
+            z-index: -1;
+            -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+            box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+            transition: all 250ms;
+        }
+
+        #GameNameButton:hover {
+            color: #e8e8e8;
+        }
+
+        #GameNameButton:hover::before {
+            width: 100%;
+        }
+        #DisTeamName{
+            padding: 10px;
+            border-radius: 5px;
+            border-width: 0px;
+            font-size: 16px;
+            font-weight: 600;
+            color: aliceblue;
+            font-family: Bahnschrift SemiBold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="sportName">FOOTBALL</h1>
+    <hr>
+    <div id="teamNameDis">
         <div id="GameName"><button onclick="myFun()" id="GameNameButton">Enter name of the game</button></div><br>
         <div id="DisTeamName"></div>
         <div id="team1form">
             Enter name of the team :
             <input type="text" id="team1" placeholder="Enter team name">
             <button type="button" id="team1btn" onclick="teamName()">&#10004;</button>
-        </div><br><br>
-        Enter player names :<br>
-        <form id="PlayerEntries">
-                <div id="1playerEntry">
-                    <input type="text" placeholder="Enter player name">
-                    <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
-                </div>
-        </form>
+        </div>
+    </div>
+    <br><br>
+    Enter player names :<br>
+    <form id="PlayerEntries">
+        <div id="1playerEntry">
+            <input type="text" id="pNameInput" placeholder="Enter player name">
+            <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
+        </div>
+    </form>
 
 
 
-        <script>
-            function myFun(){
-                let gameName = prompt("Enter the name of this game :","");
-                if(gameName == "") {
-                    alert("Invalid!! Try again");
-                    myFun();
-                } else {
-                    document.getElementById("GameName").removeAttribute("GameNameButton");
-                    document.getElementById("GameName").innerHTML = gameName;
+    <script>
+        function myFun() {
+            let gameName = prompt("Enter the name of this game :", "");
+            if (gameName == "") {
+                alert("Invalid!! Try again");
+                myFun();
+            } else {
+                document.getElementById("GameName").removeAttribute("GameNameButton");
+                document.getElementById("GameName").innerHTML = gameName;
+            }
+        }
+        function teamName() {
+            let text;
+            let btnStyle = {
+                
+            }
+            let tName = document.getElementById("team1").value;
+            if (tName == "") {
+                alert("Enter team name")
+            } else {
+                text = "Team 1 : " + tName;
+                document.getElementById("team1form").remove();
+                document.getElementById("DisTeamName").innerHTML = text;
+                text.assign('padding: 10px;border-radius: 5px;border-width: 0px;font-size: 16px;font-weight: 600;color: aliceblue;font-family: Bahnschrift SemiBold');
+            }
+        }
+        function playerConfimation() {
+            let pcbtn = document.getElementById("pconfirmbtn");
+            pcbtn.remove();
+        }
+        function enterIntoFun(inputVar, btnVar) {
+            document.getElementById(inputVar).addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    document.getElementById(btnVar).click();
                 }
-            }
-            function teamName(){
-                let text;
-                let tName = document.getElementById("team1").value;
-                if(tName == ""){
-                    alert("Enter team name")
-                } else {
-                    text = "Team 1 : " + tName;
-                    document.getElementById("team1form").remove();
-                    document.getElementById("DisTeamName").innerHTML = text;
-                }
-            }
-            function playerConfimation(){
-                let pcbtn = document.getElementById("pconfirmbtn");
-                pcbtn.remove();
-            }
-
-            document.getElementById("team1").addEventListener("keypress", function (event) {
-            if (event.key === "Enter") {
-                document.getElementById("team1btn").click();
-            }
             });
+        }
+        enterIntoFun("team1", "team1btn");
+        enterIntoFun("pNameInput", "pconfirmbtn")
 
-        </script>
-    </body>
+    </script>
+</body>
+
 </html>
