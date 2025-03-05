@@ -8,16 +8,22 @@
     <style>
         body {
             background: linear-gradient(#4CC9FE, #99c969);
-            height: 100vh;
+            height: 95vh;
             background-repeat: no-repeat;
+        }
+        
+        #contentBox{
+            background-color: aliceblue;
+            margin: 50px;
         }
 
         #sportName {
             font-size: 60px;
             font-weight: bold;
             font-family: Bahnschrift SemiBold;
-            color: aliceblue;
+            color: rgb(28, 130, 220);
             margin-bottom: 10px;
+            text-align: center;
         }
 
         #teamNameDis {
@@ -32,10 +38,10 @@
             padding: 10px;
             border-radius: 5px;
             border-width: 0px;
-            background-color: aliceblue;
+            background-color: rgb(28, 130, 220);
             font-size: 16px;
             font-weight: 600;
-            color: Bahnschrift SemiBold;
+            color: aliceblue;
             cursor: pointer;
             transition: all 250ms;
             position: relative;
@@ -50,7 +56,7 @@
             left: 0;
             height: 100%;
             width: 0;
-            background-color: #212121;
+            background-color: #15aa02;
             z-index: -1;
             -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
             box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
@@ -69,54 +75,112 @@
             padding: 10px;
             border-radius: 5px;
             border-width: 0px;
-            font-size: 16px;
+            font-size: 20px;
             font-weight: 600;
-            color: aliceblue;
+            color: rgb(28, 130, 220);
             font-family: Bahnschrift SemiBold;
         }
     </style>
 </head>
 
 <body>
-    <h1 id="sportName">FOOTBALL</h1>
-    <hr>
-    <div id="teamNameDis">
-        <div id="GameName">
-            <button onclick="myFun()" id="GameNameButton">Enter name of the game</button>
+    <div id="contentBox">
+        <h1 id="sportName">FOOTBALL</h1>
+        <hr>
+        <div id="teamNameDis">
+            <div id="GameName">
+                <button onclick="myFun()" id="GameNameButton">Enter name of the game</button>
+            </div>
+
+            <div id="DisTeamName"></div>
         </div>
 
-        <div id="DisTeamName"></div>
-
         <div id="team1form">
-            Enter name of the team :
+            Enter name of team 1 :
             <input type="text" id="team1" placeholder="Enter team name">
             <button type="button" id="team1btn" onclick="teamName()">&#10004;</button>
         </div>
+
+        Enter player names :
+        <form id="PlayerEntries">
+
+            <div id="1playerEntry">
+                <input type="text" id="pNameInput" placeholder="Enter player name">
+                <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
+                <button type="button" id="pedit" onclick="pEdit()">✎</button>
+            </div>
+
+            <div id="1playerEntry">
+                <input type="text" id="pNameInput" placeholder="Enter player name">
+                <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
+                <button type="button" id="pedit" onclick="pEdit()">✎</button>
+            </div>
+
+            <div id="1playerEntry">
+                <input type="text" id="pNameInput" placeholder="Enter player name">
+                <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
+                <button type="button" id="pedit" onclick="pEdit()">✎</button>
+            </div>
+
+            <div id="1playerEntry">
+                <input type="text" id="pNameInput" placeholder="Enter player name">
+                <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
+                <button type="button" id="pedit" onclick="pEdit()">✎</button>
+            </div>
+
+            <div id="1playerEntry">
+                <input type="text" id="pNameInput" placeholder="Enter player name">
+                <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
+                <button type="button" id="pedit" onclick="pEdit()">✎</button>
+            </div>
+
+            <button type="submit" id="team1submit">Submit</button>
+
+        </form>
+
+        <div id="team2form">
+            Enter name of team 2 :
+            <input type="text" id="team2" placeholder="Enter team name">
+            <button type="button" id="team2btn" onclick="teamName()">&#10004;</button>
+        </div>
+
+        Enter player names :
+        <form id="PlayerEntries">
+
+            <div id="1playerEntry">
+                <input type="text" id="pNameInput" placeholder="Enter player name">
+                <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
+                <button type="button" id="pedit" onclick="pEdit()">✎</button>
+            </div>
+
+            <div id="1playerEntry">
+                <input type="text" id="pNameInput" placeholder="Enter player name">
+                <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
+                <button type="button" id="pedit" onclick="pEdit()">✎</button>
+            </div>
+
+            <div id="1playerEntry">
+                <input type="text" id="pNameInput" placeholder="Enter player name">
+                <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
+                <button type="button" id="pedit" onclick="pEdit()">✎</button>
+            </div>
+
+            <div id="1playerEntry">
+                <input type="text" id="pNameInput" placeholder="Enter player name">
+                <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
+                <button type="button" id="pedit" onclick="pEdit()">✎</button>
+            </div>
+
+            <div id="1playerEntry">
+                <input type="text" id="pNameInput" placeholder="Enter player name">
+                <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
+                <button type="button" id="pedit" onclick="pEdit()">✎</button>
+            </div>
+
+            <button type="submit" id="team1submit">Submit</button>
+
+        </form>
     </div>
-    Enter player names :<br>
-    <form id="PlayerEntries">
-        <div id="1playerEntry">
-            <input type="text" id="pNameInput" placeholder="Enter player name">
-            <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
-            <button type="button" id="pedit" onclick="pEdit()">&#xf044;</button>
-        </div>
-        <div id="1playerEntry">
-            <input type="text" id="pNameInput" placeholder="Enter player name">
-            <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
-        </div>
-        <div id="1playerEntry">
-            <input type="text" id="pNameInput" placeholder="Enter player name">
-            <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
-        </div>
-        <div id="1playerEntry">
-            <input type="text" id="pNameInput" placeholder="Enter player name">
-            <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
-        </div>
-        <div id="1playerEntry">
-            <input type="text" id="pNameInput" placeholder="Enter player name">
-            <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
-        </div>
-    </form>
 
 
 
