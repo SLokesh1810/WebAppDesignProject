@@ -64,7 +64,8 @@
         #GameNameButton:hover::before {
             width: 100%;
         }
-        #DisTeamName{
+
+        #DisTeamName {
             padding: 10px;
             border-radius: 5px;
             border-width: 0px;
@@ -80,17 +81,37 @@
     <h1 id="sportName">FOOTBALL</h1>
     <hr>
     <div id="teamNameDis">
-        <div id="GameName"><button onclick="myFun()" id="GameNameButton">Enter name of the game</button></div><br>
+        <div id="GameName">
+            <button onclick="myFun()" id="GameNameButton">Enter name of the game</button>
+        </div>
+
         <div id="DisTeamName"></div>
+
         <div id="team1form">
             Enter name of the team :
             <input type="text" id="team1" placeholder="Enter team name">
             <button type="button" id="team1btn" onclick="teamName()">&#10004;</button>
         </div>
     </div>
-    <br><br>
     Enter player names :<br>
     <form id="PlayerEntries">
+        <div id="1playerEntry">
+            <input type="text" id="pNameInput" placeholder="Enter player name">
+            <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
+            <button type="button" id="pedit" onclick="pEdit()">&#xf044;</button>
+        </div>
+        <div id="1playerEntry">
+            <input type="text" id="pNameInput" placeholder="Enter player name">
+            <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
+        </div>
+        <div id="1playerEntry">
+            <input type="text" id="pNameInput" placeholder="Enter player name">
+            <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
+        </div>
+        <div id="1playerEntry">
+            <input type="text" id="pNameInput" placeholder="Enter player name">
+            <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
+        </div>
         <div id="1playerEntry">
             <input type="text" id="pNameInput" placeholder="Enter player name">
             <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
@@ -106,14 +127,14 @@
                 alert("Invalid!! Try again");
                 myFun();
             } else {
-                document.getElementById("GameName").removeAttribute("GameNameButton");
-                document.getElementById("GameName").innerHTML = gameName;
+                document.getElementById("GameName").remove();
+                document.getElementById("DisTeamName").innerHTML = gameName;
             }
         }
         function teamName() {
             let text;
             let btnStyle = {
-                
+
             }
             let tName = document.getElementById("team1").value;
             if (tName == "") {
@@ -122,7 +143,6 @@
                 text = "Team 1 : " + tName;
                 document.getElementById("team1form").remove();
                 document.getElementById("DisTeamName").innerHTML = text;
-                text.assign('padding: 10px;border-radius: 5px;border-width: 0px;font-size: 16px;font-weight: 600;color: aliceblue;font-family: Bahnschrift SemiBold');
             }
         }
         function playerConfimation() {
@@ -137,7 +157,7 @@
             });
         }
         enterIntoFun("team1", "team1btn");
-        enterIntoFun("pNameInput", "pconfirmbtn")
+        enterIntoFun("pNameInput", "pconfirmbtn");
 
     </script>
 </body>
