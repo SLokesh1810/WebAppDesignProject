@@ -14,8 +14,8 @@
             display: flex;
             padding: 20px;
         }
-        
-        #contentBox{
+
+        #contentBox {
             background-color: aliceblue;
             width: 600px;
             border-radius: 20px;
@@ -111,36 +111,15 @@
         </div>
 
         Enter player names :
-        <form id="PlayerEntries">
+        <div id="PlayerNamesT1">
+            <button type="button" onclick="addPlayer()">+</button>
+        </div>
+        <form id="PlayerEntriest1">
 
-            <div id="1playerEntry">
-                <input type="text" id="pNameInput" placeholder="Enter player name">
-                <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
-                <button type="button" id="pedit" onclick="pEdit()">✎</button>
-            </div>
-
-            <div id="1playerEntry">
-                <input type="text" id="pNameInput" placeholder="Enter player name">
-                <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
-                <button type="button" id="pedit" onclick="pEdit()">✎</button>
-            </div>
-
-            <div id="1playerEntry">
-                <input type="text" id="pNameInput" placeholder="Enter player name">
-                <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
-                <button type="button" id="pedit" onclick="pEdit()">✎</button>
-            </div>
-
-            <div id="1playerEntry">
-                <input type="text" id="pNameInput" placeholder="Enter player name">
-                <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
-                <button type="button" id="pedit" onclick="pEdit()">✎</button>
-            </div>
-
-            <div id="1playerEntry">
-                <input type="text" id="pNameInput" placeholder="Enter player name">
-                <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
-                <button type="button" id="pedit" onclick="pEdit()">✎</button>
+            <div class="1playerEntry">
+                <input type="text" class="pNameInput" placeholder="Enter player name">
+                <button type="button" class="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
+                <button type="button" class="pedit" onclick="pEdit()">✎</button>
             </div>
 
             <button type="submit" id="team1submit">Submit</button>
@@ -154,33 +133,33 @@
         </div>
 
         Enter player names :
-        <form id="PlayerEntries">
+        <form id="PlayerEntries2t">
 
-            <div id="1playerEntry">
+            <div class="1playerEntry">
                 <input type="text" id="pNameInput" placeholder="Enter player name">
                 <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
                 <button type="button" id="pedit" onclick="pEdit()">✎</button>
             </div>
 
-            <div id="1playerEntry">
+            <div class="1playerEntry">
                 <input type="text" id="pNameInput" placeholder="Enter player name">
                 <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
                 <button type="button" id="pedit" onclick="pEdit()">✎</button>
             </div>
 
-            <div id="1playerEntry">
+            <div class="1playerEntry">
                 <input type="text" id="pNameInput" placeholder="Enter player name">
                 <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
                 <button type="button" id="pedit" onclick="pEdit()">✎</button>
             </div>
 
-            <div id="1playerEntry">
+            <div class="1playerEntry">
                 <input type="text" id="pNameInput" placeholder="Enter player name">
                 <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
                 <button type="button" id="pedit" onclick="pEdit()">✎</button>
             </div>
 
-            <div id="1playerEntry">
+            <div class="1playerEntry">
                 <input type="text" id="pNameInput" placeholder="Enter player name">
                 <button type="button" id="pconfirmbtn" onclick="playerConfirm()">&#10004;</button>
                 <button type="button" id="pedit" onclick="pEdit()">✎</button>
@@ -229,6 +208,15 @@
                 }
             });
         }
+        function addPlayer(){
+            let inputTxt = document.createElement("input");
+            inputTxt.type = "text";
+            inputTxt.class = "1playerEntry";
+            let confirmbtn = document.createElement("button");
+            let editbtn = document.createElement("button");
+            
+        }
+        var team1 = []
         enterIntoFun("team1", "team1btn");
         enterIntoFun("pNameInput", "pconfirmbtn");
 
