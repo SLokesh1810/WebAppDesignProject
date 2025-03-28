@@ -8,7 +8,7 @@
     <style>
         body {
             background: linear-gradient(#4CC9FE, #99c969);
-            height: 98vh;
+            height: 120vh;
             background-repeat: no-repeat;
             align-items: center;
             display: flex;
@@ -18,16 +18,22 @@
             color: rgb(28, 130, 220);
         }
 
-        h4{
+        h4 {
             margin: 2px;
         }
-
+        .TeamContainer{
+            background-color: transparent;
+            border-radius: 15px;
+            box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            margin: 20px 10px;
+        }
         #contentBox {
             background-color: aliceblue;
             width: 600px;
             border-radius: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            margin: 0 auto;
+            margin: 20px;
             backdrop-filter: blur(10px);
             padding: 20px;
         }
@@ -85,13 +91,12 @@
             width: 100%;
         }
 
-        #DisTeamName {
-            padding: 10px;
+        #DisTeamName1,
+        #DisTeamName2 {
             border-radius: 5px;
             font-size: 20px;
             font-weight: 600;
             color: rgb(28, 130, 220);
-            text-align: center;
         }
 
         input[type="text"] {
@@ -158,46 +163,51 @@
             <div id="GameName">
                 <button onclick="myFun()" id="GameNameButton">Enter name of the game</button>
             </div>
-
-            <div id="DisTeamName"></div>
         </div>
 
-        <!-- Team 1 -->
-        <div id="team1form">
-            <h4>Enter name of team 1 :</h4>
-            <input type="text" id="team1" placeholder="Enter team name">
-            <button type="button" id="team1btn" onclick="teamName('team1', 'team1form', 'Team 1')">&#10004;</button>
-        </div>
-
-        <h4>Enter player names :</h4>
-
-        <form id="PlayerEntriest1">
-            <div class="playerEntry">
-                <input type="text" class="pNameInput" placeholder="Enter player name">
+        <div class="TeamContainer">
+            <!-- Team 1 -->
+            <div id="DisTeamName1"></div>
+            <div id="team1form">
+                <h4>Enter name of team 1 :</h4>
+                <input type="text" id="team1" placeholder="Enter team name">
+                <button type="button" id="team1btn"
+                    onclick="teamName('team1', 'team1form', 'Team 1','DisTeamName1')">&#10004;</button>
             </div>
-        </form>
-        <button type="button" id="PlayerNamesT1" onclick="addPlayer('PlayerEntriest1')">+</button>
 
-        <button type="submit" id="team1submit">Submit Team 1</button>
+            <h4>Enter player names :</h4>
 
-        <!-- Team 2 -->
-        <div id="team2form">
-            <h4>Enter name of team 2 :</h4>
-            <input type="text" id="team2" placeholder="Enter team name">
-            <button type="button" id="team2btn" onclick="teamName('team2', 'team2form', 'Team 2')">&#10004;</button>
+            <form id="PlayerEntriest1">
+                <div class="playerEntry">
+                    <input type="text" class="pNameInput" placeholder="Enter player name">
+                </div>
+            </form>
+            <button type="button" id="PlayerNamesT1" onclick="addPlayer('PlayerEntriest1')">+</button>
+
+            <button type="submit" id="team1submit">Submit Team 1</button>
         </div>
 
-        <h4>Enter player names :</h4>
-
-        <form id="PlayerEntriest2">
-            <div class="playerEntry">
-                <input type="text" class="pNameInput" placeholder="Enter player name">
+        <div class="TeamContainer">
+            <!-- Team 2 -->
+            <div id="DisTeamName2"></div>
+            <div id="team2form">
+                <h4>Enter name of team 2 :</h4>
+                <input type="text" id="team2" placeholder="Enter team name">
+                <button type="button" id="team2btn"
+                    onclick="teamName('team2', 'team2form', 'Team 2','DisTeamName2')">&#10004;</button>
             </div>
-        </form>
-        <button type="button" onclick="addPlayer('PlayerEntriest2')">+</button>
 
-        <button type="submit" id="team2submit">Submit Team 2</button>
+            <h4>Enter player names :</h4>
 
+            <form id="PlayerEntriest2">
+                <div class="playerEntry">
+                    <input type="text" class="pNameInput" placeholder="Enter player name">
+                </div>
+            </form>
+            <button type="button" onclick="addPlayer('PlayerEntriest2')">+</button>
+
+            <button type="submit" id="team2submit">Submit Team 2</button>
+        </div>
 
     </div>
 
@@ -217,14 +227,14 @@
         }
 
         // Function for adding team name
-        function teamName(teamId, teamFormId, teamLabel) {
+        function teamName(teamId, teamFormId, teamLabel, htmlContainer) {
             let tName = document.getElementById(teamId).value;
             if (tName == "") {
                 alert("Enter team name");
             } else {
                 let text = teamLabel + ": " + tName;
                 document.getElementById(teamFormId).remove();
-                document.getElementById("DisTeamName").innerHTML = text;
+                document.getElementById(htmlContainer).innerHTML = text;
             }
         }
 
